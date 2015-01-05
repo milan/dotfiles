@@ -1,0 +1,59 @@
+[user]
+    name = Milan Magudia
+    editor = vim
+[github]
+    user = milan
+[push]
+    default = tracking
+[color]
+    ui = auto
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = cyan
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = cyan
+    whitespace = red reverse
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+[core]
+    whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+    excludesfile = ~/.gitignore
+    pager = less -FRSX
+[alias]
+    st = status -s
+    ci = commit
+    br = branch
+    co = checkout
+    df = diff
+    dc = diff --cached
+    ds = diff --stat
+    sl = stash list
+    sa = stash apply
+    ss = stash save
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    ls = ls-files
+    ls-ignored = ls-files --exclude-standard --ignored --others
+    last = cat-file commit HEAD
+    cat = -p cat-file -p
+    unstage = reset HEAD
+    uncommit = reset --soft HEAD^
+    changelog = log --pretty=format:\" * %s\"
+    out = log --graph --oneline --pretty=format:'%Cred%h%Cgreen %cd %Creset- %s' --abbrev-commit --date=relative --graph @{upstream}..
+    in = !git fetch && git log --pretty=oneline --abbrev-commit --graph ..@{upstream}
+[advice]
+    statusHints = false
+[diff]
+    renames = copies
+    mnemonicprefix = true
+[merge]
+    stat = true
+    summary = true
+[diff "exif"]
+    textconv = exif
